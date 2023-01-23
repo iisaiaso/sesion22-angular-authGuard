@@ -1,0 +1,40 @@
+<form [formGroup]="formLogin" class="flex flex-col min-h-screen">
+  <div
+    class="container max-w-xs mx-auto px-2 flex-1 flex flex-col items-center justify-center"
+  >
+    <div class="py-8 px-8 rounded shadow-xl w-full bg-slate-100">
+      <h1 class="mb-4 text-center text-xl font-semibold">Sing in</h1>
+      <div>
+        <label class="" for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="block w-full p-3 rounded mb-4 mt-1 border border-slate-300"
+          placeholder="ejemplo@gmail.com"
+        />
+      </div>
+      <div>
+        <label class="" for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="block w-full p-3 rounded mb-4 mt-1 border border-slate-300"
+          placeholder="********************************"
+        />
+      </div>
+      <div>
+        <button 
+        (click)="sendLogin()"
+        class="bg-green-500 rounded-lg w-full py-2 text-white hover:bg-green-700">Sign in</button>
+      </div>
+      <div>
+        <p class="flex text-sm mt-3">
+          ¿No tienes una cuenta?
+          <a  routerLink="/register" class="ml-2 text-blue-500">Registrate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</form>

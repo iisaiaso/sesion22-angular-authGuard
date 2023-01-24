@@ -1,1 +1,11 @@
-<p>header works!</p>
+<!-- {{ loged }} -->
+<div class="bg-red-200 py-5 flex justify-end">
+  <button *ngIf="logeado; else other" class="mr-5">
+    hola
+  </button>
+  <ng-template #other>
+    <button (click)="logoutUser()">
+      <a>salir</a>
+    </button>
+  </ng-template>
+</div>

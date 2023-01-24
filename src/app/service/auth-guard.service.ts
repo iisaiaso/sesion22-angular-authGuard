@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,9 @@ export class AuthGuardService implements OnInit {
   }
   isLogin({email, password}:any){
     return signInWithEmailAndPassword(this.auth, email, password)
+  }
+
+  isLogOut(){
+    return signOut(this.auth)
   }
 }

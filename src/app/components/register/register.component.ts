@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
         .then(res => {
           console.log(res);
           console.log("Registrado exitosamente");
-          this.route.navigate(['login'])
+          this.route.navigate(['/login']) 
         })
         .catch(error => {
           console.log((error));

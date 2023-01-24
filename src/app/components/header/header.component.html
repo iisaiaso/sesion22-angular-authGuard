@@ -1,11 +1,8 @@
-<!-- {{ loged }} -->
-<div class="bg-red-200 py-5 flex justify-end">
-  <button *ngIf="logeado; else other" class="mr-5">
-    hola
+<div class="bg-gray-700 py-5 flex justify-end">
+  <button (click)="logoutUser()" class="mr-10">
+    <a class="flex">
+      <span class="text-white"> Log Out</span>
+      <img src="./assets/img/log-out-outline.svg" width="30" />
+    </a>
   </button>
-  <ng-template #other>
-    <button (click)="logoutUser()">
-      <a>salir</a>
-    </button>
-  </ng-template>
 </div>

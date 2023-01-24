@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AuthGuardService } from 'src/app/service/auth-guard.service';
 
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,15 +27,23 @@ export class LoginComponent implements OnInit {
       this.authServiceLogin.isLogin(this.formLogin.value)
         .then(res => {
           if (res) {
-            alert("Bienvenido: " + " " + this.formLogin.value.email)
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: `Bienvenido ${this.formLogin.value.email}`,
+              showConfirmButton: false,
+              timer: 1500
+            })
             this.route.navigate(['/home'])
-          }else{
-            console.log("error");
           }
         })
         .catch(error => { console.log(error) })
     } else {
-      alert("Los campos no deben estar vacios")
+      Swal.fire({
+        icon: 'warning',
+        title: '',
+        text: 'Los campos no deben estar vacios!'
+      })
     }
 
   }

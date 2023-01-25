@@ -1,0 +1,51 @@
+<div class="w-3/4 py-5 mx-auto mt-5">
+  <div class="max-w-[40%] mx-auto shadow-2xl rounded-xl">
+    <form class="px-5 py-5" [formGroup]="formRegisterProduct" >
+      <h1 class="text-center text-3xl mb-1">Register Product</h1>
+      <div class="px-5 py-5">
+        <div class="mb-4 flex justify-center items-center">
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            formControlName="name"
+            id="name"
+            class="w-full border-0 border-2 border-red-200 rounded-lg ml-8"
+          />
+        </div>
+        <div class="mb-4 flex">
+          <label for="qty">Qty: </label>
+          <input
+            type="text"
+            formControlName="qty"
+            id="qty"
+            class="w-full border-2 border-red-200 rounded-lg ml-12"
+          />
+        </div>
+        <div class="mb-4 flex justify-center items-center">
+          <label for="price">Price: </label>
+          <input
+            type="text"
+            formControlName="price"
+            id="price"
+            class="w-full border-2 border-red-200 rounded-lg ml-10"
+          />
+        </div>
+        <div class="mb-4 flex justify-center items-center">
+          <label for="photo">Photo: </label>
+          <input
+            type="text"
+            formControlName="photo"
+            id="photo"
+            class="w-full border-2 border-red-200 rounded-lg ml-8"
+          />
+        </div>
+        <div>
+          <button 
+          (click)="saveProduct()"
+          class="bg-green-500 w-full rounded-lg py-1 text-white hover:bg-green-700"
+          >Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

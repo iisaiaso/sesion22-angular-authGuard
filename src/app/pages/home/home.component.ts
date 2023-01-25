@@ -7,15 +7,18 @@ import { AuthGuardService } from 'src/app/service/auth-guard.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
-
-  constructor (private authServiceLogout: AuthGuardService, private route:Router){}
+export class HomeComponent implements OnInit {
+  constructor(private authServiceLogout: AuthGuardService, private route: Router) { }
 
   ngOnInit(): void {
-      
+
+  }
+  saveProduct() {
+    alert("Guardado")
+    this.route.navigate(['/product'])
   }
 
-  logoutUser(){
+  logoutUser() {
     this.authServiceLogout.isLogOut()
     localStorage.removeItem('logeado')
     this.route.navigate(['/login'])

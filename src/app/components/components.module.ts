@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterProductComponent } from './register-product/register-product.component';
+import { ListProductComponent } from './list-product/list-product.component';
 
 
 
@@ -12,7 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterProductComponent,
+    ListProductComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   exports:[
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterProductComponent
   ]
 })
 export class ComponentsModule { }

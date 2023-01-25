@@ -1,0 +1,78 @@
+<div class="w-3/5 mx-auto mb-5">
+    <div class="mt-10 shadow-2xl bg-slate-200 rounded-lg py-5">
+      <h1 class="text-4xl text-center font-semibold font-mono">
+        Lista de Productos
+      </h1>
+    </div>
+  </div>
+  
+  <!-- Agregar producto -->
+  <div class="w-3/5 mx-auto mb-5">
+    <a [routerLink]="['product']">
+      <button
+        class="bg-blue-600 rounded-xl px-3 py-2 flex hover:bg-blue-700"
+      >
+        <img src="/assets/img/add-product.svg" width="35" alt="" />
+        <span class="mt-2 ml-1 text-white mr-2">Add Product</span>
+      </button>
+    </a>
+  </div>
+  <!-- Listado de productos -->
+  <div class="w-3/5 mx-auto mb-5">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">
+              <span class="sr-only">Image</span>
+            </th>
+            <th scope="col" class="px-6 py-3">Product</th>
+            <th scope="col" class="px-6 py-3">Qty</th>
+            <th scope="col" class="px-6 py-3">Price</th>
+            <th scope="col" class="px-6 py-3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let list of producto"
+            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+          >
+            <td class="w-32 p-4">
+              <img src="{{ list.photo }}" alt="{{ list.name }}" />
+            </td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+              {{ list.name }}
+            </td>
+            <td class="px-6 py-4">
+              <div class="flex items-center space-x-3">
+                <div>
+                  <input
+                    id="first_product"
+                    class="text-center bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="{{ list.qty }}"
+                    readonly
+                  />
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+              {{ list.price | currency : "S/ " }}
+            </td>
+            <td class="px-6 py-4">
+              <a
+                class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                >
+                <button 
+                (click)="onDeleteProduct(list)">Remove</button>
+                </a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+
